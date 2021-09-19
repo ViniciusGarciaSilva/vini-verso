@@ -8,6 +8,8 @@ class Event extends Equatable {
   final String imageUrl;
   final DateTime startDate;
   final DateTime endDate;
+  final String place;
+  final String zone;
   final List<Artist> artists;
   final int capacity;
   final int interested;
@@ -25,6 +27,8 @@ class Event extends Equatable {
     required this.imageUrl,
     required this.startDate,
     required this.endDate,
+    required this.place,
+    required this.zone,
     required this.artists,
     required this.capacity,
     required this.interested,

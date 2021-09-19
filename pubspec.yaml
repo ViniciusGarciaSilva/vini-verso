@@ -9,9 +9,11 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
+  cached_network_image: ^3.1.0
   dartz: ^0.10.0
   flutter_bloc: ^7.2.0 
   flutter_modular: ^3.4.1
+  flutter_rating_bar: ^4.0.0
   flutter_svg: ^0.22.0
   equatable: ^2.0.3
   intl: ^0.17.0

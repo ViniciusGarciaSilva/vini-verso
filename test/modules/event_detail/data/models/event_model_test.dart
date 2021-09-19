@@ -13,6 +13,8 @@ main() {
     imageUrl: EntityMock.event.imageUrl,
     startDate: EntityMock.event.startDate,
     endDate: EntityMock.event.endDate,
+    place: EntityMock.event.place,
+    zone: EntityMock.event.zone,
     artists: EntityMock.event.artists,
     capacity: EntityMock.event.capacity,
     interested: EntityMock.event.interested,

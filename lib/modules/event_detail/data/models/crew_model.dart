@@ -4,7 +4,7 @@ class CrewModel extends Crew {
   CrewModel({
     required String name,
     required String image,
-    required int rating,
+    required double rating,
   }) : super(
           image: image,
           name: name,

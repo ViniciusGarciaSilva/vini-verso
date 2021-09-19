@@ -4,6 +4,8 @@
     "imageUrl": "https://psytrancebr.com/wp-content/uploads/2020/03/psy-fly-mundo-dos-sonhos.jpg",
     "startDate": "14/03/2020 16:00",
     "endDate": "15/03/2020 19:00",
+    "place": "Palácio Sunset",
+    "zone": "SP - São José dos Campos",
     "artists": [
         {
             "name": "Neelix",
@@ -79,7 +81,7 @@
         },
         {
             "name": "Special M",
-            "nationality": "MXBR"
+            "nationality": "BR"
         },
         {
             "name": "Nirix",
@@ -91,7 +93,7 @@
         },
         {
             "name": "Acquavitta",
-            "nationality": "ILBR"
+            "nationality": "BR"
         },
         {
             "name": "Specter vs Oddyzeira",
@@ -111,7 +113,7 @@
     "crew": {
         "name": "PsyFly",
         "image": "https://scontent.fcgh3-1.fna.fbcdn.net/v/t1.6435-9/92773386_1115110582187191_4179017249320861696_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeHyMCszLxm7-78M_X_SDin6lCWxpJHLxAiUJbGkkcvECE4ZvI7vrXOUlC29KXp-5bGxt2blfisg6CQbXHX9JrFt&_nc_ohc=g7DNKvrw8yEAX8b8AsS&_nc_ht=scontent.fcgh3-1.fna&oh=5d063630f3a12063d935d9261064f7d2&oe=615B6BD2",
-        "rating": 5
+        "rating": 5.0
     },
     "description": "O mundo está nas mãos daqueles que tem coragem de sonhar e de correr o risco de viver seus sonhos.\nSonhar com o impossível é o primeiro passo para torná-lo possível.\nSeja qual for o seu sonho, comece!\nOusadia tem genialidade, poder e magia!\nSejam bem-vindos ao MUNDO DOS SONHOS.\nSejam bem-vindos à PsyFly ♥️\nIngressos Online: blacktag.com.br/eventos/4314/psyfly-o-mundo-dos-sonhos\nTema para perfil: www.facebook.com/profilepicframes/?selected_overlay_id=458036511742828",
     "lineUpUrl": ""

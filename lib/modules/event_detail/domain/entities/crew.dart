@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 class Crew extends Equatable {
   final String name;
   final String image;
-  final int rating;
+  final double rating;
 
   Crew({
     required this.name,

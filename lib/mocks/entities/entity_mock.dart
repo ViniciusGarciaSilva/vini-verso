@@ -4,13 +4,14 @@ import 'package:vini_verso/modules/event_detail/data/models/event_model.dart';
 import 'package:vini_verso/shared/utils/date_utils.dart';
 
 class EntityMock {
-  static get event => EventModel(
+  static EventModel get event => EventModel(
         id: '1',
         name: 'PsyFly - O Mundo dos Sonhos',
-        imageUrl:
-            'https://psytrancebr.com/wp-content/uploads/2020/03/psy-fly-mundo-dos-sonhos.jpg',
+        imageUrl: 'https://psytrancebr.com/wp-content/uploads/2020/03/psy-fly-mundo-dos-sonhos.jpg',
         startDate: dateFormatter('14/03/2020 16:00'),
         endDate: dateFormatter('15/03/2020 19:00'),
+        place: 'Palácio Sunset',
+        zone: 'SP - São José dos Campos',
         artists: [
           ArtistModel(
             name: 'Neelix',
@@ -86,7 +87,7 @@ class EntityMock {
           ),
           ArtistModel(
             name: 'Special M',
-            nationality: 'MXBR',
+            nationality: 'BR',
           ),
           ArtistModel(
             name: 'Nirix',
@@ -98,7 +99,7 @@ class EntityMock {
           ),
           ArtistModel(
             name: 'Acquavitta',
-            nationality: 'ILBR',
+            nationality: 'BR',
           ),
           ArtistModel(
             name: 'Specter vs Oddyzeira',

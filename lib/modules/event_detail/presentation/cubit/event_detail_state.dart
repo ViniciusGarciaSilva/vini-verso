@@ -10,7 +10,7 @@ class EventDetailState extends Equatable {
   });
 
   @override
-  List<Object?> get props => [status];
+  List<Object?> get props => [status, event];
 
   EventDetailState copyWith({
     Status? status,
