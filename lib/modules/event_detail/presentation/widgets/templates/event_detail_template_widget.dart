@@ -25,9 +25,9 @@ class EventDetailTemplateWidget extends StatelessWidget {
             place: event.place,
             zone: event.zone,
           ),
-          const SizedBox(height: AppDimensions.kMarginMedium),
+          const SizedBox(height: kMarginDefault),
           EventDetailLineupWidget(artists: event.artists),
-          const SizedBox(height: AppDimensions.kMarginMedium),
+          const SizedBox(height: kMarginDefault),
           EventDetailGeneralInfosWidget(
             capacity: event.capacity,
             confirmed: event.confirmed,
@@ -36,17 +36,17 @@ class EventDetailTemplateWidget extends StatelessWidget {
             minPrice: event.minPrice,
             ticketsUrl: event.ticketsUrl,
           ),
-          const SizedBox(height: AppDimensions.kMarginMedium),
+          const SizedBox(height: kMarginDefault),
           EventDetailCrewWidget(
             name: event.crew.name,
             rating: event.crew.rating,
             imageUrl: event.crew.image,
           ),
-          const SizedBox(height: AppDimensions.kMarginMedium),
+          const SizedBox(height: kMarginDefault),
           EventDetailDescriptionWidget(
             description: event.description,
           ),
-          const SizedBox(height: AppDimensions.kMarginMedium),
+          const SizedBox(height: kMarginDefault),
         ],
       ),
     );

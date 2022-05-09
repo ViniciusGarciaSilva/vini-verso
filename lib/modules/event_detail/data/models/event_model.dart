@@ -48,21 +48,28 @@ class EventModel extends Event {
     return EventModel(
       id: json['id'],
       name: json['name'],
-      imageUrl: json['imageUrl'],
-      startDate: dateFormatter(json['startDate']),
-      endDate: dateFormatter(json['endDate']),
+      imageUrl: json['image_url'],
+      startDate: dateFormatter(json['start_date']),
+      endDate: dateFormatter(json['end_date']),
       place: json['place'],
       zone: json['zone'],
+      // artists: [],
       artists: (json['artists'] as List).map((artist) => ArtistModel.fromJson(artist)).toList(),
       capacity: json['capacity'],
       interested: json['interested'],
       confirmed: json['confirmed'],
-      minPrice: json['minPrice'],
-      maxPrice: json['maxPrice'],
-      ticketsUrl: json['ticketsUrl'],
-      crew: CrewModel.fromJson(json['crew']),
+      minPrice: json['min_price'],
+      maxPrice: json['max_price'],
+      ticketsUrl: json['tickets_url'],
+      crew: CrewModel.fromJson(json['crew']), // TODO:
+      // crew: Crew(
+      //   name: "PsyFly",
+      //   image:
+      //       "https://scontent.fcgh3-1.fna.fbcdn.net/v/t1.6435-9/92773386_1115110582187191_4179017249320861696_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeHyMCszLxm7-78M_X_SDin6lCWxpJHLxAiUJbGkkcvECE4ZvI7vrXOUlC29KXp-5bGxt2blfisg6CQbXHX9JrFt&_nc_ohc=g7DNKvrw8yEAX8b8AsS&_nc_ht=scontent.fcgh3-1.fna&oh=5d063630f3a12063d935d9261064f7d2&oe=615B6BD2",
+      //   rating: 5.0,
+      // ),
       description: json['description'],
-      lineUpUrl: json['lineUpUrl'],
+      lineUpUrl: json['line_up_url'],
     );
   }
 }

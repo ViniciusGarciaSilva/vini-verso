@@ -1,6 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:vini_verso/modules/event_detail/event_detail_strings.dart';
+import 'package:vini_verso/modules/event_detail/presentation/widgets/atoms/event_name_atom.dart';
+import 'package:vini_verso/shared/configs/app_configs.dart';
+import 'package:vini_verso/shared/presentation/app_dimensions.dart';
+import 'package:vini_verso/shared/presentation/app_text_styles.dart';
+import 'package:vini_verso/shared/presentation/widgets/atoms/image_atom.dart';
+import 'package:vini_verso/shared/presentation/widgets/molecules/label_value_molecule.dart';
 
 class EventDetailHeaderWidget extends StatelessWidget {
   final String name;
@@ -26,76 +32,39 @@ class EventDetailHeaderWidget extends StatelessWidget {
       width: double.infinity,
       child: Column(
         children: [
-          CachedNetworkImage(
+          ImageAtom(
             imageUrl: imageUrl,
+            height: MediaQuery.of(context).size.width * bannerHeightScale,
+            width: MediaQuery.of(context).size.width,
           ),
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(kMarginDefault),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  children: [
-                    Text(
-                      name,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      ),
-                    ),
-                  ],
+                EventNameAtom(name: name),
+                const SizedBox(height: kMarginSmall),
+                Text(
+                  EventDetailStrings.eventDate(startDate: startDate, endDate: endDate),
+                  style: AppTextStyles.roboto.regular.size.h14,
                 ),
-                const SizedBox(height: 4),
-                Row(
-                  children: [
-                    Text(
-                      EventDetailStrings.eventDate(startDate: startDate, endDate: endDate),
-                      style: TextStyle(
-                        fontSize: 14,
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 12),
+                const SizedBox(height: kMarginDefault),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Local',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Color(0xFF818181),
-                          ),
-                        ),
-                        const SizedBox(height: 2),
-                        Text(
-                          place,
-                          style: TextStyle(
-                            fontSize: 14,
-                          ),
-                        ),
-                      ],
+                    Expanded(
+                      child: LabelValueMolecule(
+                        label: 'Local',
+                        value: place,
+                      ),
                     ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Região',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Color(0xFF818181),
-                          ),
-                        ),
-                        const SizedBox(height: 2),
-                        Text(
-                          zone,
-                          style: TextStyle(
-                            fontSize: 14,
-                          ),
-                        ),
-                      ],
+                    const SizedBox(height: kMarginDetail),
+                    Expanded(
+                      child: LabelValueMolecule(
+                        label: 'Região',
+                        value: zone,
+                      ),
                     ),
                   ],
                 ),

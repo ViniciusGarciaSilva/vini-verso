@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class EventDetailArtistWidget extends StatelessWidget {
@@ -15,8 +16,8 @@ class EventDetailArtistWidget extends StatelessWidget {
           style: TextStyle(fontSize: 14),
         ),
         const SizedBox(width: 4),
-        Image.network(
-          'https://www.countryflags.io/$nationality/flat/64.png',
+        CachedNetworkImage(
+          imageUrl: 'https://countryflagsapi.com/png/$nationality',
           height: 15,
           width: 15,
         ),

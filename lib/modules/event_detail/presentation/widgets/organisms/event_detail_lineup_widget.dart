@@ -9,6 +9,9 @@ class EventDetailLineupWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (artists.length == 0) {
+      return Container();
+    }
     return Container(
       color: Colors.white,
       width: double.infinity,

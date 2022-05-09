@@ -8,11 +8,20 @@ import 'package:vini_verso/modules/event_detail/presentation/pages/event_detail_
 class EventDetailModule extends Module {
   @override
   List<Bind> get binds => [
-        Bind((i) => EventDetailRemoteDatasourceImpl()),
+        // Datasources
+        Bind((i) => EventDetailRemoteDatasourceImpl(appNetwork: i(), dio: i())),
+
+        // Repositories
         Bind((i) => EventDetailRepositoryImpl(datasource: i())),
+
+        // Usecases
         Bind((i) => GetEventDetailUsecase(repository: i())),
+
+        // Cubits
         Bind((i) => EventDetailCubit(
-            getEventDetailUsecase: i(), id: '1')), // TODO: Change This
+              getEventDetailUsecase: i(),
+              id: '1',
+            )), // TODO: Change This
       ];
 
   @override

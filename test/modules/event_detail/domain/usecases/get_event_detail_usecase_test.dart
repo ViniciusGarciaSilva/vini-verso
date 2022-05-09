@@ -17,14 +17,12 @@ void main() {
     usecase = GetEventDetailUsecase(repository: repository);
   });
 
-  test(
-      'should return a Event Entity for a given id when the call to the repository is successful',
+  test('should return a Event Entity for a given id when the call to the repository is successful',
       () async {
     // arrange
     final mockId = '1';
     final params = GetEventDetailUsecaseParams(id: mockId);
-    when(() => repository.getEventDetail(mockId))
-        .thenAnswer((_) async => Right(EntityMock.event));
+    when(() => repository.getEventDetail(mockId)).thenAnswer((_) async => Right(EntityMock.event));
 
     // act
     final result = await usecase(params);
@@ -34,15 +32,12 @@ void main() {
     expect(Right(EntityMock.event), result);
   });
 
-  test(
-      'should return a Failure when the call to the repository is unsuccessful',
-      () async {
+  test('should return a Failure when the call to the repository is unsuccessful', () async {
     // arrange
     final mockId = '1';
     final params = GetEventDetailUsecaseParams(id: mockId);
     final mockFailure = Failure(exception: Exception('falha no repositorio'));
-    when(() => repository.getEventDetail(mockId))
-        .thenAnswer((_) async => Left(mockFailure));
+    when(() => repository.getEventDetail(mockId)).thenAnswer((_) async => Left(mockFailure));
 
     // act
     final result = await usecase(params);
