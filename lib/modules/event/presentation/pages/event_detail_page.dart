@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vini_verso/modules/event/domain/entities/event.dart';
-import 'package:vini_verso/modules/event/event_strings.dart';
 import 'package:vini_verso/modules/event/presentation/cubit/event_detail_cubit.dart';
 import 'package:vini_verso/modules/event/presentation/widgets/templates/event_detail_template_widget.dart';
 import 'package:vini_verso/shared/presentation/app_colors.dart';

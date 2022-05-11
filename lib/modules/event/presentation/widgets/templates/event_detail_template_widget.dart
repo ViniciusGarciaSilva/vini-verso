@@ -5,7 +5,6 @@ import 'package:vini_verso/modules/event/presentation/widgets/organisms/event_de
 import 'package:vini_verso/modules/event/presentation/widgets/organisms/event_detail_general_infos_organism.dart';
 import 'package:vini_verso/modules/event/presentation/widgets/organisms/event_detail_header_organism.dart';
 import 'package:vini_verso/modules/event/presentation/widgets/organisms/event_detail_line_up_organism.dart';
-import 'package:vini_verso/shared/configs/app_configs.dart';
 import 'package:vini_verso/shared/presentation/app_dimensions.dart';
 import 'package:vini_verso/shared/presentation/widgets/atoms/image_atom.dart';
 
@@ -17,18 +16,14 @@ class EventDetailTemplateWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      // physics: const BouncingScrollPhysics(),
       slivers: [
         SliverAppBar(
-          stretch: true,
           backgroundColor: Colors.black,
           expandedHeight: MediaQuery.of(context).size.width,
           flexibleSpace: FlexibleSpaceBar(
-            stretchModes: const [StretchMode.zoomBackground],
-            titlePadding: EdgeInsets.zero,
             background: ImageAtom(
               imageUrl: event.imageUrl,
-              height: MediaQuery.of(context).size.width * bannerHeightScale,
+              height: MediaQuery.of(context).size.width,
               width: MediaQuery.of(context).size.width,
             ),
           ),
