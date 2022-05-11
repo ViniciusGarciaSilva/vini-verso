@@ -2,8 +2,8 @@
 
 // import 'package:flutter_test/flutter_test.dart';
 // import 'package:vini_verso/mocks/entities/entity_mock.dart';
-// import 'package:vini_verso/modules/event_detail/data/models/artist_model.dart';
-// import 'package:vini_verso/modules/event_detail/domain/entities/artist.dart';
+// import 'package:vini_verso/modules/event/data/models/artist_model.dart';
+// import 'package:vini_verso/modules/event/domain/entities/artist.dart';
 // import 'package:vini_verso/shared/utils/fixture_reader.dart';
 
 // main() {

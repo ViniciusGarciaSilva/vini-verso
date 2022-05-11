@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:vini_verso/mocks/entities/entity_mock.dart';
-import 'package:vini_verso/mocks/maps/event_detail_map.dart';
-import 'package:vini_verso/modules/event_detail/data/models/event_model.dart';
+import 'package:vini_verso/mocks/requests/event_detail/event_detail_request_mock.dart';
+import 'package:vini_verso/modules/event/data/models/event_model.dart';
 
 main() {
   final eventModelMock = EventModel(
@@ -26,9 +26,9 @@ main() {
 
   test('should return a valid model for a event JSON', () async {
     // Act
-    final eventModel = EventModel.fromJson(eventDetailMap);
+    final eventModel = EventModel.fromJson(eventDetailMockMap);
 
     // Assert
-    expect(eventModel, eventDetailEntity);
+    expect(eventModel, eventDetailMock);
   });
 }

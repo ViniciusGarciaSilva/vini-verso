@@ -2,14 +2,14 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:vini_verso/mocks/entities/entity_mock.dart';
-import 'package:vini_verso/modules/event_detail/domain/repositories/event_detail_repository.dart';
-import 'package:vini_verso/modules/event_detail/domain/usecases/get_event_detail_usecase.dart';
+import 'package:vini_verso/modules/event/domain/repositories/event_repository.dart';
+import 'package:vini_verso/modules/event/domain/usecases/get_event_detail_usecase.dart';
 import 'package:vini_verso/shared/domain/errors/failure.dart';
 
-class MockEventDetailRepository extends Mock implements EventDetailRepository {}
+class MockEventDetailRepository extends Mock implements EventRepository {}
 
 void main() {
-  late EventDetailRepository repository;
+  late EventRepository repository;
   late GetEventDetailUsecase usecase;
 
   setUp(() {

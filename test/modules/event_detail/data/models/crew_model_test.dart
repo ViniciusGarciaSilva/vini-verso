@@ -2,8 +2,8 @@
 
 // import 'package:flutter_test/flutter_test.dart';
 // import 'package:vini_verso/mocks/entities/entity_mock.dart';
-// import 'package:vini_verso/modules/event_detail/data/models/crew_model.dart';
-// import 'package:vini_verso/modules/event_detail/domain/entities/crew.dart';
+// import 'package:vini_verso/modules/event/data/models/crew_model.dart';
+// import 'package:vini_verso/modules/event/domain/entities/crew.dart';
 
 // main() {
 //   final crewModelMock = CrewModel(

@@ -1,6 +1,6 @@
-import 'package:vini_verso/modules/event_detail/data/models/artist_model.dart';
-import 'package:vini_verso/modules/event_detail/data/models/crew_model.dart';
-import 'package:vini_verso/modules/event_detail/data/models/event_model.dart';
+import 'package:vini_verso/modules/event/data/models/artist_model.dart';
+import 'package:vini_verso/modules/event/data/models/crew_model.dart';
+import 'package:vini_verso/modules/event/data/models/event_model.dart';
 import 'package:vini_verso/shared/utils/date_utils.dart';
 
 class EntityMock {

@@ -1,5 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:vini_verso/modules/event_detail_module.dart';
+import 'package:vini_verso/modules/event_module.dart';
 import 'package:vini_verso/shared/configs/environments.dart';
 import 'package:vini_verso/shared/data/app_network.dart';
 import 'package:vini_verso/shared/data/base_dio.dart';
@@ -39,6 +39,6 @@ class AppModule extends Module {
 
   @override
   final List<ModularRoute> routes = [
-    ModuleRoute(Modular.initialRoute, module: EventDetailModule()),
+    ModuleRoute(Modular.initialRoute, module: EventModule()),
   ];
 }

@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:vini_verso/mocks/maps/event_detail_map.dart';
+import 'package:vini_verso/mocks/requests/event_detail/event_detail_request_mock.dart';
 import 'package:vini_verso/shared/data/mock_request.dart';
 
 class EventDetailRequest implements MockRequest {
@@ -16,7 +16,7 @@ class EventDetailRequest implements MockRequest {
   Headers? get responseHeaders => null;
 
   @override
-  get responseJson => eventDetailMap;
+  get responseJson => eventDetailMockMap;
 
   @override
   int? get statusCode => null;
