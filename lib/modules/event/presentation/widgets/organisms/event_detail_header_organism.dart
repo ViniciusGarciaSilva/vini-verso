@@ -32,11 +32,11 @@ class EventDetailHeaderOrganism extends StatelessWidget {
       width: double.infinity,
       child: Column(
         children: [
-          ImageAtom(
-            imageUrl: imageUrl,
-            height: MediaQuery.of(context).size.width * bannerHeightScale,
-            width: MediaQuery.of(context).size.width,
-          ),
+          // ImageAtom(
+          //   imageUrl: imageUrl,
+          //   height: MediaQuery.of(context).size.width * bannerHeightScale,
+          //   width: MediaQuery.of(context).size.width,
+          // ),
           Padding(
             padding: const EdgeInsets.all(kMarginDefault),
             child: Column(

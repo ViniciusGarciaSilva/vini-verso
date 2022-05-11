@@ -26,9 +26,7 @@ class _EventDetailPageState extends ModularCubitState<EventDetailPage, EventDeta
       backgroundColor: AppColors.background,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Center(
-          child: Text(EventStrings.detail.title),
-        ),
+        toolbarHeight: 0,
       ),
       body: BlocConsumer<EventDetailCubit, EventDetailState>(
         bloc: cubit,

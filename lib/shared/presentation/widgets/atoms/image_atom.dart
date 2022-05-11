@@ -17,6 +17,7 @@ class ImageAtom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
+      fit: BoxFit.cover,
       imageUrl: imageUrl,
       width: width,
       fadeOutDuration: Duration(milliseconds: 0),
