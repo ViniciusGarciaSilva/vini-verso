@@ -1,19 +1,62 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "vini-verso",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "vini-verso (profile mode)",
+            "name": "viniverso_dev",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
-        }
+            "program": "lib/main_dev.dart",
+            // "args": [
+            //     "--flavor=dev"
+            // ]
+        },
+        {
+            "name": "viniverso_hmg",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_hmg.dart",
+            // "args": [
+            //     "--flavor=hmg"
+            // ]
+        },
+        {
+            "name": "viniverso_prod",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_prod.dart",
+            // "args": [
+            //     "--flavor=prod"
+            // ]
+        },
+        {
+            "name": "viniverso_dev_release",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_dev.dart",
+            // "args": [
+            //     "--flavor=dev",
+            //     "--release"
+            // ]
+        },
+        {
+            "name": "viniverso_hmg_release",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_hmg.dart",
+            // "args": [
+            //     "--flavor=hmg",
+            //     "--release"
+            // ]
+        },
+        {
+            "name": "viniverso_prod_release",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_prod.dart",
+            // "args": [
+            //     "--flavor=prod",
+            //     "--release"
+            // ]
+        },
     ]
 }
