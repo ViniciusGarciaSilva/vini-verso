@@ -11,7 +11,7 @@ class GetEventDetailUsecase extends UseCase<Event, GetEventDetailUsecaseParams> 
 
   @override
   Future<Either<Failure, Event>> call(GetEventDetailUsecaseParams params) =>
-      repository.getEventDetail(params.id);
+      repository.getEventDetail(id: params.id);
 }
 
 class GetEventDetailUsecaseParams {

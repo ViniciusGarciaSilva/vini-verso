@@ -1,10 +1,11 @@
 import 'package:equatable/equatable.dart';
 
 class Failure extends Equatable {
-  final dynamic exception;
-  final dynamic data;
+  final Exception exception;
 
-  Failure({required this.exception, this.data});
+  Failure({required this.exception});
+
+  String get message => exception.toString();
 
   @override
   List<Object?> get props => [exception];

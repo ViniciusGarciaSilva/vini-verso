@@ -17,28 +17,38 @@ main() {
     eventDetailRepositoryImpl = EventRepositoryImpl(datasource: eventDetailRemoteDatasource);
   });
 
-  test('should return a Event when the call to the remote datasource is successful', () async {
-    // arrange
-    final mockId = '1';
-    final eventMock = EntityMock.event;
-    when(() => eventDetailRemoteDatasource.getEventDetail(id: mockId))
-        .thenAnswer((invocation) async => eventMock);
-    // act
-    final result = await eventDetailRepositoryImpl.getEventDetail(mockId);
-    // assert
-    verify(() => eventDetailRepositoryImpl.getEventDetail(mockId)).called(1);
-    expect(result, Right(eventMock));
+  group('When [getEventDetail] is called,', () {
+    test(
+        'and the call to the [eventDetailRemoteDatasource.getEventDetail] is successfull, should return a [Event].',
+        () async {
+      // Arrange
+      final mockId = '1';
+      final eventMock = EntityMock.event;
+      when(() => eventDetailRemoteDatasource.getEventDetail(id: mockId))
+          .thenAnswer((invocation) async => eventMock);
+
+      // Act
+      final result = await eventDetailRepositoryImpl.getEventDetail(id: mockId);
+
+      // Assert
+      verify(() => eventDetailRemoteDatasource.getEventDetail(id: mockId)).called(1);
+      expect(result, Right(eventMock));
+    });
   });
 
-  test('should return a Failure when the call to the remote datasource is unsuccessful', () async {
-    // arrange
-    final exception = Exception('Error in Remote Datasource');
+  test(
+      'and the call to the [eventDetailRemoteDatasource.getEventDetail] is unsuccessfull, should return a [Failure].',
+      () async {
+    // Arrange
+    final exception = Exception();
     final mockId = '1';
     when(() => eventDetailRemoteDatasource.getEventDetail(id: mockId)).thenThrow(exception);
-    // act
-    final result = await eventDetailRepositoryImpl.getEventDetail(mockId);
-    // assert
-    verify(() => eventDetailRepositoryImpl.getEventDetail(mockId)).called(1);
+
+    // Act
+    final result = await eventDetailRepositoryImpl.getEventDetail(id: mockId);
+
+    // Assert
+    verify(() => eventDetailRemoteDatasource.getEventDetail(id: mockId)).called(1);
     expect(result, Left(Failure(exception: exception)));
   });
 }

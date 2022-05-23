@@ -7,7 +7,7 @@ import 'package:vini_verso/shared/utils/date_utils.dart';
 
 class EventModel extends Event {
   EventModel({
-    required String id,
+    required int id,
     required String name,
     required String imageUrl,
     required DateTime startDate,
@@ -21,7 +21,7 @@ class EventModel extends Event {
     required double minPrice,
     required double maxPrice,
     required String ticketsUrl,
-    required Crew crew,
+    required List<Crew> crew,
     required String description,
     required String lineUpUrl,
   }) : super(
@@ -39,7 +39,7 @@ class EventModel extends Event {
           minPrice: minPrice,
           maxPrice: maxPrice,
           ticketsUrl: ticketsUrl,
-          crew: crew,
+          crews: crew,
           description: description,
           lineUpUrl: lineUpUrl,
         );
@@ -47,29 +47,22 @@ class EventModel extends Event {
   factory EventModel.fromJson(Map<String, dynamic> json) {
     return EventModel(
       id: json['id'],
-      name: json['name'],
-      imageUrl: json['image_url'],
-      startDate: dateFormatter(json['start_date']),
-      endDate: dateFormatter(json['end_date']),
+      name: json['eventName'],
+      imageUrl: json['imageUrl'],
+      startDate: dateFormatter(json['startDate']),
+      endDate: dateFormatter(json['endDate']),
       place: json['place'],
       zone: json['zone'],
-      // artists: [],
       artists: (json['artists'] as List).map((artist) => ArtistModel.fromJson(artist)).toList(),
       capacity: json['capacity'],
       interested: json['interested'],
       confirmed: json['confirmed'],
-      minPrice: json['min_price'],
-      maxPrice: json['max_price'],
-      ticketsUrl: json['tickets_url'],
-      crew: CrewModel.fromJson(json['crew']), // TODO:
-      // crew: Crew(
-      //   name: "PsyFly",
-      //   image:
-      //       "https://scontent.fcgh3-1.fna.fbcdn.net/v/t1.6435-9/92773386_1115110582187191_4179017249320861696_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeHyMCszLxm7-78M_X_SDin6lCWxpJHLxAiUJbGkkcvECE4ZvI7vrXOUlC29KXp-5bGxt2blfisg6CQbXHX9JrFt&_nc_ohc=g7DNKvrw8yEAX8b8AsS&_nc_ht=scontent.fcgh3-1.fna&oh=5d063630f3a12063d935d9261064f7d2&oe=615B6BD2",
-      //   rating: 5.0,
-      // ),
-      description: json['description'],
-      lineUpUrl: json['line_up_url'],
+      minPrice: json['minPrice'],
+      maxPrice: json['maxPrice'],
+      ticketsUrl: json['ticketsUrl'],
+      crew: (json['crew'] as List).map((crewJson) => CrewModel.fromJson(crewJson)).toList(),
+      description: json['eventDescription'],
+      lineUpUrl: json['lineupUrl'] ?? '',
     );
   }
 }

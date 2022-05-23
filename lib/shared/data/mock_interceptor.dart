@@ -24,7 +24,7 @@ class MockInterceptor extends Interceptor {
       _validateMethod(mockType: mockRequest.requestType, optionMethod: options.method);
 
       final params =
-          mockRequest.requestType == RequestType.GET ? options.queryParameters : options.data;
+          mockRequest.requestType == RequestType.get ? options.queryParameters : options.data;
 
       _validateParams(mockRequest: mockRequest, data: params);
 
@@ -65,7 +65,7 @@ class MockInterceptor extends Interceptor {
   }
 
   void _validateMethod({required RequestType mockType, required String optionMethod}) {
-    if (mockType.name == optionMethod) {
+    if (mockType.name.toLowerCase() == optionMethod.toLowerCase()) {
       return;
     } else {
       throw Exception(

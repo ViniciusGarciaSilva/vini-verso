@@ -13,7 +13,7 @@ class DevEnvironment implements Environment {
 
 class HmgEnvironment implements Environment {
   @override
-  String get baseUrl => 'https://viniverso.herokuapp.com/';
+  String get baseUrl => 'https://viniverseapitest.azurewebsites.net/api/v1/';
 
   @override
   String get suffix => 'hmg';

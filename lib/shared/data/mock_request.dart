@@ -1,6 +1,11 @@
 import 'package:dio/dio.dart';
 
-enum RequestType { POST, GET, PUT, DELETE }
+enum RequestType {
+  post,
+  get,
+  put,
+  delete,
+}
 
 abstract class MockRequest {
   final RequestType requestType;

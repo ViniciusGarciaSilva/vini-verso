@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vini_verso/modules/event/domain/entities/event.dart';
-import 'package:vini_verso/modules/event/presentation/widgets/organisms/event_detail_crew_organism.dart';
+import 'package:vini_verso/modules/event/presentation/widgets/molecules/event_detail_crew_molecule.dart';
+import 'package:vini_verso/modules/event/presentation/widgets/organisms/event_detail_crews_organism.dart';
 import 'package:vini_verso/modules/event/presentation/widgets/organisms/event_detail_description_widget.dart';
 import 'package:vini_verso/modules/event/presentation/widgets/organisms/event_detail_general_infos_organism.dart';
 import 'package:vini_verso/modules/event/presentation/widgets/organisms/event_detail_header_organism.dart';
@@ -51,10 +52,8 @@ class EventDetailTemplateWidget extends StatelessWidget {
                 ticketsUrl: event.ticketsUrl,
               ),
               const SizedBox(height: kMarginDefault),
-              EventDetailCrewOrganism(
-                name: event.crew.name,
-                rating: event.crew.rating,
-                imageUrl: event.crew.image,
+              EventDetailCrewsOrganism(
+                crewList: event.crews,
               ),
               const SizedBox(height: kMarginDefault),
               EventDetailDescriptionWidget(

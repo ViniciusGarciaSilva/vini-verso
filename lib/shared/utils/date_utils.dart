@@ -1,6 +1,6 @@
 import 'package:intl/intl.dart';
 
-DateTime dateFormatter(String date) => DateFormat('dd/MM/yyyy HH:mm').parse(date);
+DateTime dateFormatter(String date) => DateFormat('yyyy-MM-ddTHH:mm:ss').parse(date);
 
 String? getWeekDayInitials(int day) {
   switch (day) {

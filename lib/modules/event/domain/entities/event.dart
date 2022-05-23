@@ -3,7 +3,7 @@ import 'package:vini_verso/modules/event/domain/entities/artist.dart';
 import 'package:vini_verso/modules/event/domain/entities/crew.dart';
 
 class Event extends Equatable {
-  final String id;
+  final int id;
   final String name;
   final String imageUrl;
   final DateTime startDate;
@@ -17,7 +17,7 @@ class Event extends Equatable {
   final double minPrice;
   final double maxPrice;
   final String ticketsUrl;
-  final Crew crew;
+  final List<Crew> crews;
   final String description;
   final String lineUpUrl;
 
@@ -36,7 +36,7 @@ class Event extends Equatable {
     required this.minPrice,
     required this.maxPrice,
     required this.ticketsUrl,
-    required this.crew,
+    required this.crews,
     required this.description,
     required this.lineUpUrl,
   });
@@ -55,7 +55,7 @@ class Event extends Equatable {
         minPrice,
         maxPrice,
         ticketsUrl,
-        crew,
+        crews,
         description,
         lineUpUrl,
       ];

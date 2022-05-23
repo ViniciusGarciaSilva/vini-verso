@@ -1,7 +1,8 @@
 import 'package:vini_verso/modules/event/data/models/event_model.dart';
 import 'package:vini_verso/modules/event/domain/entities/event.dart';
 import 'package:vini_verso/shared/data/app_network.dart';
-import 'package:vini_verso/shared/data/base_dio.dart';
+import 'package:vini_verso/shared/data/exceptions.dart';
+import 'package:vini_verso/shared/data/not_logged_dio.dart';
 
 abstract class EventRemoteDatasource {
   Future<Event> getEventDetail({required String id});
@@ -9,7 +10,7 @@ abstract class EventRemoteDatasource {
 
 class EventRemoteDatasourceImpl implements EventRemoteDatasource {
   final AppNetwork appNetwork;
-  final BaseDio dio;
+  final NotLoggedDio dio;
 
   EventRemoteDatasourceImpl({
     required this.dio,
@@ -21,13 +22,13 @@ class EventRemoteDatasourceImpl implements EventRemoteDatasource {
     final response = await dio.get(
       appNetwork.eventDetail,
       queryParameters: {
-        'id': id,
+        'idEvent': id,
       },
     );
     try {
       return EventModel.fromJson(response.data);
     } catch (error) {
-      rethrow;
+      throw ParseDataException('$EventModel parse error: $error');
     }
   }
 }

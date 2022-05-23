@@ -5,6 +5,7 @@ import 'package:vini_verso/modules/event/presentation/cubit/event_detail_cubit.d
 import 'package:vini_verso/modules/event/presentation/widgets/templates/event_detail_template_widget.dart';
 import 'package:vini_verso/shared/presentation/app_colors.dart';
 import 'package:vini_verso/shared/presentation/page_state.dart';
+import 'package:vini_verso/shared/presentation/show_error.dart';
 import 'package:vini_verso/shared/presentation/status.dart';
 
 class EventDetailPage extends StatefulWidget {
@@ -30,8 +31,11 @@ class _EventDetailPageState extends ModularCubitState<EventDetailPage, EventDeta
       body: BlocConsumer<EventDetailCubit, EventDetailState>(
         bloc: cubit,
         listener: (context, state) {
-          // TODO: Check error state
+          if (state.failure != null) {
+            showError(state.failure!.message);
+          }
         },
+        listenWhen: (previous, current) => previous.failure != current.failure,
         builder: (context, state) {
           if (state.status == Status.loading) {
             return Center(

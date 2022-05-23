@@ -22,13 +22,14 @@ void main() {
     // arrange
     final mockId = '1';
     final params = GetEventDetailUsecaseParams(id: mockId);
-    when(() => repository.getEventDetail(mockId)).thenAnswer((_) async => Right(EntityMock.event));
+    when(() => repository.getEventDetail(id: mockId))
+        .thenAnswer((_) async => Right(EntityMock.event));
 
     // act
     final result = await usecase(params);
 
     // assert
-    verify(() => repository.getEventDetail(mockId)).called(1);
+    verify(() => repository.getEventDetail(id: mockId)).called(1);
     expect(Right(EntityMock.event), result);
   });
 
@@ -37,13 +38,13 @@ void main() {
     final mockId = '1';
     final params = GetEventDetailUsecaseParams(id: mockId);
     final mockFailure = Failure(exception: Exception('falha no repositorio'));
-    when(() => repository.getEventDetail(mockId)).thenAnswer((_) async => Left(mockFailure));
+    when(() => repository.getEventDetail(id: mockId)).thenAnswer((_) async => Left(mockFailure));
 
     // act
     final result = await usecase(params);
 
     // assert
-    verify(() => repository.getEventDetail(mockId)).called(1);
+    verify(() => repository.getEventDetail(id: mockId)).called(1);
     expect(Left(mockFailure), result);
   });
 }

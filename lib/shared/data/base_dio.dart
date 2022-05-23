@@ -4,26 +4,22 @@ import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:vini_verso/shared/configs/environments.dart';
 import 'package:vini_verso/shared/configs/request_config.dart';
-import 'package:vini_verso/shared/data/mock_interceptor.dart';
 
 class BaseDio extends DioForNative {
   BaseDio({
-    required Environment enviroment,
-    MockInterceptor? mockInterceptor,
+    required Environment environment,
+    required Interceptor enviromentInterceptor,
   }) {
-    interceptors.add(PrettyDioLogger(
-      requestBody: true,
-      logPrint: (obj) => debugPrint(obj as String?),
-    ));
+    interceptors.addAll([
+      enviromentInterceptor,
+      PrettyDioLogger(
+        requestBody: true,
+        logPrint: (obj) => debugPrint(obj as String?),
+      ),
+    ]);
     options = BaseOptions(
-      baseUrl: enviroment.baseUrl,
+      baseUrl: environment.baseUrl,
       connectTimeout: RequestConfig.timeout,
     );
-    if (enviroment is DevEnvironment && mockInterceptor != null) {
-      interceptors.add(mockInterceptor);
-    } else {
-      throw Exception(
-          'When environment is [DevEnvironment], a mockInterceptor should be provided.');
-    }
   }
 }

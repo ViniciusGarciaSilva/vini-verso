@@ -5,11 +5,11 @@ import 'package:vini_verso/shared/utils/date_utils.dart';
 
 class EntityMock {
   static EventModel get event => EventModel(
-        id: '1',
+        id: 1,
         name: 'PsyFly - O Mundo dos Sonhos',
         imageUrl: 'https://psytrancebr.com/wp-content/uploads/2020/03/psy-fly-mundo-dos-sonhos.jpg',
-        startDate: dateFormatter('14/03/2020 16:00'),
-        endDate: dateFormatter('15/03/2020 19:00'),
+        startDate: dateFormatter('2020-03-14T16:00:00'),
+        endDate: dateFormatter('2020-03-15T19:00:00'),
         place: 'Palácio Sunset',
         zone: 'SP - São José dos Campos',
         artists: [
@@ -116,7 +116,7 @@ class EntityMock {
         minPrice: 100,
         maxPrice: 200,
         ticketsUrl: 'https://www.ticketsforfun.com.br/',
-        crew: crew,
+        crew: [crew],
         description:
             'O mundo está nas mãos daqueles que tem coragem de sonhar e de correr o risco de viver seus sonhos.\nSonhar com o impossível é o primeiro passo para torná-lo possível.\nSeja qual for o seu sonho, comece!\nOusadia tem genialidade, poder e magia!\nSejam bem-vindos ao MUNDO DOS SONHOS.\nSejam bem-vindos à PsyFly ♥️\nIngressos Online: blacktag.com.br/eventos/4314/psyfly-o-mundo-dos-sonhos\nTema para perfil: www.facebook.com/profilepicframes/?selected_overlay_id=458036511742828',
         lineUpUrl: '',

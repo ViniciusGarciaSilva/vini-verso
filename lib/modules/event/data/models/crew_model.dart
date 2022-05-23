@@ -13,9 +13,9 @@ class CrewModel extends Crew {
 
   factory CrewModel.fromJson(Map<String, dynamic> json) {
     return CrewModel(
-      name: json['name'],
+      name: json['crewName'],
       image: json['image'],
-      rating: json['rating'],
+      rating: json['classification'],
     );
   }
 }

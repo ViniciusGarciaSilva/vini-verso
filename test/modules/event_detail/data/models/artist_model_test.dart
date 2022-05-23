@@ -1,26 +1,16 @@
-// import 'dart:convert';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:vini_verso/mocks/jsons/artist_json.dart';
+import 'package:vini_verso/modules/event/data/models/artist_model.dart';
 
-// import 'package:flutter_test/flutter_test.dart';
-// import 'package:vini_verso/mocks/entities/entity_mock.dart';
-// import 'package:vini_verso/modules/event/data/models/artist_model.dart';
-// import 'package:vini_verso/modules/event/domain/entities/artist.dart';
-// import 'package:vini_verso/shared/utils/fixture_reader.dart';
+main() {
+  test('should return a [ArtistModel] for a given valid event JSON', () async {
+    // Arrange
+    final json = artistJson;
 
-// main() {
-//   final artistModelMock = ArtistModel(
-//     name: EntityMock.artist.name,
-//     nationality: EntityMock.artist.nationality,
-//   );
-//   test('should be a extension of Artist', () {
-//     // assert
-//     expect(true, artistModelMock is Artist);
-//   });
-//   test('should return a valid model for a artist JSON', () async {
-//     // arrange
-//     final Map<String, dynamic> jsonMap = json.decode(await fixture('artist'));
-//     // act
-//     final artistModel = ArtistModel.fromJson(jsonMap);
-//     // assert
-//     expect(artistModel, artistModelMock);
-//   });
-// }
+    // Act
+    final eventModel = ArtistModel.fromJson(json);
+
+    // Assert
+    expect(eventModel, isA<ArtistModel>());
+  });
+}

@@ -1,3 +1,3 @@
 class RequestConfig {
-  static const int timeout = 60;
+  static const int timeout = 60000;
 }

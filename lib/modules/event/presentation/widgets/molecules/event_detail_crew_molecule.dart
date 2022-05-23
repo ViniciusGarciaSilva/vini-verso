@@ -6,12 +6,12 @@ import 'package:vini_verso/shared/presentation/app_colors.dart';
 import 'package:vini_verso/shared/presentation/app_dimensions.dart';
 import 'package:vini_verso/shared/presentation/app_text_styles.dart';
 
-class EventDetailCrewOrganism extends StatelessWidget {
+class EventDetailCrewMolecule extends StatelessWidget {
   final String name;
   final double rating;
   final String imageUrl;
 
-  const EventDetailCrewOrganism({
+  const EventDetailCrewMolecule({
     required this.name,
     required this.rating,
     required this.imageUrl,
@@ -38,6 +38,7 @@ class EventDetailCrewOrganism extends StatelessWidget {
                   imageUrl: imageUrl,
                   width: 75,
                   height: 75,
+                  errorWidget: (context, url, error) => Container(),
                 ),
                 const SizedBox(width: kMarginSmall),
                 Column(

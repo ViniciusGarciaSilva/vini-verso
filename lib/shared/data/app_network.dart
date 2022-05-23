@@ -1,3 +1,3 @@
 class AppNetwork {
-  String get eventDetail => '/principaldata';
+  String get eventDetail => '/event';
 }

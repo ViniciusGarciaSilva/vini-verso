@@ -4,12 +4,16 @@ import 'package:vini_verso/modules/event/data/repositories/event_repository_impl
 import 'package:vini_verso/modules/event/domain/usecases/get_event_detail_usecase.dart';
 import 'package:vini_verso/modules/event/presentation/cubit/event_detail_cubit.dart';
 import 'package:vini_verso/modules/event/presentation/pages/event_detail_page.dart';
+import 'package:vini_verso/shared/data/not_logged_dio.dart';
 
 class EventModule extends Module {
   @override
   List<Bind> get binds => [
         // Datasources
-        Bind((i) => EventRemoteDatasourceImpl(appNetwork: i(), dio: i())),
+        Bind((i) => EventRemoteDatasourceImpl(
+              appNetwork: i(),
+              dio: i<NotLoggedDio>(),
+            )),
 
         // Repositories
         Bind((i) => EventRepositoryImpl(datasource: i())),
