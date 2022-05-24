@@ -4,13 +4,13 @@ import 'package:vini_verso/shared/presentation/app_colors.dart';
 
 class ImageAtom extends StatelessWidget {
   final String imageUrl;
-  final double height;
-  final double width;
+  final double? height;
+  final double? width;
 
   const ImageAtom({
     required this.imageUrl,
-    required this.height,
-    required this.width,
+    this.height,
+    this.width,
     Key? key,
   }) : super(key: key);
 
@@ -19,6 +19,7 @@ class ImageAtom extends StatelessWidget {
     return CachedNetworkImage(
       fit: BoxFit.cover,
       imageUrl: imageUrl,
+      height: height,
       width: width,
       fadeOutDuration: Duration(milliseconds: 0),
       placeholder: (_, __) => Container(

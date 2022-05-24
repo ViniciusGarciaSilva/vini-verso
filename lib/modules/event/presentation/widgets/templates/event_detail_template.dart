@@ -9,10 +9,10 @@ import 'package:vini_verso/modules/event/presentation/widgets/organisms/event_de
 import 'package:vini_verso/shared/presentation/app_dimensions.dart';
 import 'package:vini_verso/shared/presentation/widgets/atoms/image_atom.dart';
 
-class EventDetailTemplateWidget extends StatelessWidget {
+class EventDetailTemplate extends StatelessWidget {
   final Event event;
 
-  const EventDetailTemplateWidget({required this.event});
+  const EventDetailTemplate({required this.event});
 
   @override
   Widget build(BuildContext context) {

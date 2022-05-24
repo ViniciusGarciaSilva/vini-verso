@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vini_verso/modules/event/domain/entities/event.dart';
 import 'package:vini_verso/modules/event/event_module.dart';
 import 'package:vini_verso/modules/event/presentation/cubit/event_detail/event_detail_cubit.dart';
-import 'package:vini_verso/modules/event/presentation/widgets/templates/event_detail_template_widget.dart';
+import 'package:vini_verso/modules/event/presentation/widgets/templates/event_detail_template.dart';
 import 'package:vini_verso/shared/presentation/app_colors.dart';
 import 'package:vini_verso/shared/presentation/page_state.dart';
 import 'package:vini_verso/shared/presentation/show_error.dart';
@@ -29,7 +29,7 @@ class _EventDetailPageState extends ModularCubitState<EventDetailPage, EventDeta
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: AppColors.appBar,
         toolbarHeight: 0,
       ),
       body: BlocConsumer<EventDetailCubit, EventDetailState>(
@@ -49,7 +49,7 @@ class _EventDetailPageState extends ModularCubitState<EventDetailPage, EventDeta
             );
           } else if (state.status == Status.success && state.event != null) {
             final Event event = state.event!;
-            return EventDetailTemplateWidget(event: event);
+            return EventDetailTemplate(event: event);
           } else {
             return const SizedBox.shrink();
           }

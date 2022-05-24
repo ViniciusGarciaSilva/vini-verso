@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vini_verso/modules/event/presentation/widgets/molecules/event_detail_place_molecule.dart';
-import 'package:vini_verso/modules/event/presentation/widgets/molecules/event_detail_name_date_molecule.dart';
+import 'package:vini_verso/modules/event/presentation/widgets/molecules/event_name_date_molecule.dart';
 import 'package:vini_verso/shared/presentation/app_dimensions.dart';
 
 class EventDetailHeaderOrganism extends StatelessWidget {
