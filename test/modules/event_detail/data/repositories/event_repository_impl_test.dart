@@ -14,7 +14,8 @@ main() {
 
   setUp(() {
     eventDetailRemoteDatasource = EventDetailRemoteDatasourceMock();
-    eventDetailRepositoryImpl = EventRepositoryImpl(datasource: eventDetailRemoteDatasource);
+    eventDetailRepositoryImpl =
+        EventRepositoryImpl(eventRemoteDatasource: eventDetailRemoteDatasource);
   });
 
   group('When [getEventDetail] is called,', () {

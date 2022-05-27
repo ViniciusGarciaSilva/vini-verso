@@ -9,7 +9,7 @@ part 'event_detail_state.dart';
 
 class EventDetailCubit extends Cubit<EventDetailState> {
   final GetEventDetailUsecase getEventDetailUsecase;
-  final String id;
+  final int id;
 
   EventDetailCubit({
     required this.getEventDetailUsecase,
@@ -22,7 +22,7 @@ class EventDetailCubit extends Cubit<EventDetailState> {
 
   void loadEventDetail() async {
     emit(state.copyWith(status: Status.loading));
-    final params = GetEventDetailUsecaseParams(id: id);
+    final params = GetEventDetailUsecaseParams(id: id.toString());
     final result = await getEventDetailUsecase(params);
     result.fold(
       (failure) {

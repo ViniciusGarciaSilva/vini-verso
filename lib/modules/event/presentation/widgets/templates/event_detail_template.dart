@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:vini_verso/modules/event/domain/entities/event.dart';
-import 'package:vini_verso/modules/event/presentation/widgets/molecules/event_detail_crew_molecule.dart';
 import 'package:vini_verso/modules/event/presentation/widgets/organisms/event_detail_crews_organism.dart';
 import 'package:vini_verso/modules/event/presentation/widgets/organisms/event_detail_description_widget.dart';
 import 'package:vini_verso/modules/event/presentation/widgets/organisms/event_detail_general_infos_organism.dart';

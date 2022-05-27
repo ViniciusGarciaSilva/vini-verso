@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:vini_verso/modules/event/domain/entities/event.dart';
+import 'package:vini_verso/modules/event/domain/entities/event_banner.dart';
 import 'package:vini_verso/modules/event/presentation/widgets/organisms/event_list_header_organism.dart';
 import 'package:vini_verso/modules/event/presentation/widgets/organisms/event_list_tile_organism.dart';
 import 'package:vini_verso/shared/presentation/app_colors.dart';
 import 'package:vini_verso/shared/presentation/app_dimensions.dart';
-import 'package:vini_verso/shared/presentation/widgets/molecules/search_bar_molecule.dart';
 
 class EventListTemplate extends StatelessWidget {
-  final List<Event> eventList;
+  final List<EventBanner> eventList;
+  final void Function(int id) onTap;
 
   const EventListTemplate({
     required this.eventList,
+    required this.onTap,
   });
 
   @override
@@ -36,7 +37,10 @@ class EventListTemplate extends StatelessWidget {
                 );
               },
               itemBuilder: (context, index) {
-                return EventListTileOrganism(event: eventList[index]);
+                return EventListTileOrganism(
+                  event: eventList[index],
+                  onTap: onTap,
+                );
               },
             ),
           ],
