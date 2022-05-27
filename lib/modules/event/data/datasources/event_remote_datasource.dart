@@ -26,7 +26,7 @@ class EventRemoteDatasourceImpl implements EventRemoteDatasource {
     final response = await dio.get(
       appNetwork.eventDetail,
       queryParameters: {
-        'idEvent': 'k',
+        'idEvent': id,
       },
     );
     try {
